@@ -1,0 +1,26 @@
+
+
+// @import './mixins/'
+
+@import './app/bootstrap.less';
+@import './app/font-awesome.less';
+@import './app/font.less';
+
+@import 'app/mixins/colors.less';
+@import 'app/mixins/nav.less';
+@import 'app/mixins/select-flags.less';
+
+
+
+
+
+body {
+	font-size: 14px;
+	font-family: 'myfont';
+	direction: rtl;
+
+
+	&.ltr {
+		direction: ltr;
+	}
+}

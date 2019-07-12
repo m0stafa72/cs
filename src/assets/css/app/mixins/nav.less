@@ -1,0 +1,43 @@
+
+
+.nav-item {
+	margin: 7px 12px;
+}
+.navbar {
+	border-color : #d2d2d2;
+}
+
+.dropdown {
+
+	&.show {
+	
+		.dropdown-menu {
+			border-top: 2px solid @border_top_nav_color;
+
+			li {
+				a {
+					
+
+					&:after {
+						font-family: 'Font Awesome 5 Pro'; 
+					    content: "\f104";    
+					    float: left;       
+					    color: grey;
+					    display: none;
+
+					    .ltr & {
+					    	float: right;
+					    	content: "\f105";
+					    }
+					}
+					&:hover {
+						background-color: #F4F4F4;
+						color: @top_nav_hover_color;
+
+						&:after { display: block; }
+					}
+				}
+			}
+		}
+	}
+}

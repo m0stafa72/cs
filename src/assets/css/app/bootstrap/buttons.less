@@ -1,0 +1,496 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  
+  padding: 8px 12px;
+  font-size: 1em;
+  line-height: 1.42857143;
+  .radius(1px) ;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  .user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      .tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+    .opacity(.65);
+    .box-shadow(none);
+  }
+
+  a& {
+    &.disabled,
+    fieldset[disabled] & {
+      pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+    }
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: @link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button btn-icons
+
+// use-> <a href="" class="btn btn-icon bg-teal"><i class="fa fa-close"> </i> close</a>
+// --------------------------------------------------
+
+.btn {
+
+    &.btn-icon {
+        
+        
+        line-height: 1.222;
+        padding: 10px 70px 8px 15px;
+        border-radius: 8px;
+        
+        color: #fff;
+        overflow: hidden;
+        text-align: right;
+        letter-spacing: -.7px;
+        position: relative;
+
+        &:before {
+            width: 60px;
+            height: 65px;
+            position: absolute;
+            right: -15px;
+            top: -20px;
+            background: hsla(0,0%,100%,.21);
+            content: "";
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+        }
+        &:hover:before {
+            width: 900px;
+            height: 900px;
+            right: -450px;
+            top: -450px;
+            transform: unset;
+        }
+
+        i {
+            position: absolute;
+            right: 17px;
+            top: 10px;
+            // font-size: 32px;
+        }
+    }
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+
+.btn-base{
+  width: 140px;
+  height: 40px;
+}
+.btn-base-big{
+  width: 200px;
+  font-size: 1.2em ;
+  height: 50px;
+  padding: 14px 12px;
+}
+
+.btn-xs, .btn-group-xs>.btn {
+    padding: 1px 7px !important;
+    font-size: 1.1em !important;
+    line-height: 2.1 !important;
+    border-radius: 2px !important;
+    height: 30px !important;
+}
+.btn-sm, .btn-group-sm>.btn {
+    padding: 5px 12px;
+    font-size: 1em;
+    line-height: 1.3333333;
+    border-radius: 2px;
+    height: 30px;
+}
+.btn-md {
+    padding: 8px 12px;
+    font-size: 1.2em;
+    line-height: 1.3333333;
+    border-radius: 2px;
+    height: 40px;
+}
+.btn-lg, .btn-group-lg>.btn {
+    padding: 9px 18px;
+    font-size: 1.4em;
+    line-height: 1.8;
+    border-radius: 2px;
+    height: 54px;
+}
+
+/*   botton background   */
+
+.sun-flower {
+  background: #f1c40f !important;
+  // border-bottom: 2px solid #e2b607;
+  // .box-shadow(inset 0 -2px #e2b607);
+  .black;
+  &:hover,&:active,&:focus{
+    background: #D4AC0C !important;
+    .black !important;
+    border-color: #D4AC0C !important;
+  }
+}
+
+.orange {
+  background: #f39c12 !important;
+  // border-bottom: 2px solid #e8930c;
+  // .box-shadow(inset 0 -2px #e8930c);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #D5880B !important;
+    .white;
+    border-color: #D5880B !important;
+  }
+}
+.dark-orange {
+  background: #F33F3F !important;
+  // border-bottom: 2px solid #e8930c;
+  // .box-shadow(inset 0 -2px #e8930c);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #D93939 !important;
+    .white;
+    border-color: #D93939 !important;
+  }
+}
+
+.carrot {
+  background: #e67e22 !important;
+  // border-bottom: 2px solid #da751c;
+  // .box-shadow(inset 0 -2px #da751c);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #e65222 !important;
+    .white;
+    border-color: #e65222 !important;
+  }
+}
+
+.pumpkin {
+  background: #d35400 !important;
+  // border-bottom: 2px solid #c54e00;
+  // .box-shadow(inset 0 -2px #c54e00);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #A34100 !important;
+    .white;
+    border-color: #A34100 !important;
+  }
+}
+
+.danger-light {
+  background: #e74c3c !important;
+  // border-bottom: 2px solid #db4334;
+  // .box-shadow(inset 0 -2px #db4334);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #DA2E1B !important;
+    .white;
+    border-color: #DA2E1B !important;
+  }
+}
+.danger-dark {
+  background: #c0392b !important;
+  // border-bottom: 2px solid #b53224;
+  // .box-shadow(inset 0 -2px #b53224);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #A63326 !important;
+    .white;
+    border-color: #A63326 !important;
+  }
+}
+
+.success-light {
+  background: #1abc9c !important;
+  // border-bottom: 2px solid #12ab8d;
+  // .box-shadow(inset 0 -2px #12ab8d);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #16A286 !important;
+    .white;
+    border-color: #16A286 !important;
+  }
+}
+
+.success-dark {
+  background: #16a085 !important;
+  // border-bottom: 2px solid #14947b;
+  // .box-shadow(inset 0 -2px #14947b);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #117E68 !important;
+    .white;
+    border-color: #117E68 !important;
+  }
+}
+
+.green-light {
+  background: #2ecc71 !important;
+  // border-bottom: 2px solid #28be68;
+  // .box-shadow(inset 0 -2px #28be68);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #26A65B !important;
+    .white;
+    border-color: #26A65B !important;
+  }
+}
+
+.green-dark {
+  background: #27ae60 !important;
+  // border-bottom: 2px solid #219d55;
+  // .box-shadow(inset 0 -2px #219d55);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #229652 !important;
+    .white;
+    border-color: #229652 !important;
+  }
+}
+.info-light {
+  background: #3498db !important;
+  // border-bottom: 2px solid #2a8bcc;
+  // .box-shadow(inset 0 -2px #2a8bcc);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #2280BF !important;
+    .white;
+    border-color: #2280BF !important;
+  }
+}
+
+.info-dark {
+  background: #2980b9 !important;
+  // border-bottom: 2px solid #2475ab;
+  // .box-shadow(inset 0 -2px #2475ab);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #216897 !important;
+    .white;
+    border-color: #216897 !important;
+  }
+}
+
+.purpor-light {
+  background: #9b59b6 !important;
+  // border-bottom: 2px solid #8d4ca7;
+  // .box-shadow(inset 0 -2px #8d4ca7);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #83449C !important;
+    .white;
+    border-color: #83449C !important;
+  }
+}
+
+.purpor-dark {
+  background: #8e44ad !important;
+  // border-bottom: 2px solid #80399d;
+  // .box-shadow(inset 0 -2px #80399d);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #783993 !important;
+    .white;
+    border-color: #783993 !important;
+  }
+}
+
+.blue-dark {
+  background: #34495e !important;
+  // border-bottom: 2px solid #263849;
+  // .box-shadow(inset 0 -2px #263849);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #2B3D4F !important;
+    .white;
+    border-color: #2B3D4F !important;
+  }
+}
+
+.default {
+  background: #ecf0f1 !important;
+  // border-bottom: 2px solid #dadedf;
+  // .box-shadow(inset 0 -2px #dadedf);
+  .black;
+  &:hover,&:active,&:focus{
+    background: #DCE3E5 !important;
+    .black !important;
+    border-color: #DCE3E5 !important;
+  }
+}
+
+.silver {
+  background: #bdc3c7 !important;
+  // border-bottom: 2px solid #acb2b7;
+  // .box-shadow(inset 0 -2px #acb2b7);
+  .black;
+  &:hover,&:active,&:focus{
+    background: #A7AFB4 !important;
+    .black !important;
+    border-color: #A7AFB4 !important;
+  }
+}
+
+.gray {
+  background: #7f8c8d !important;
+  // border-bottom: 2px solid #6d7b7c;
+  // .box-shadow(inset 0 -2px #6d7b7c);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #697677 !important;
+    .white;
+    border-color: #697677 !important;
+  }
+}
+
+.dark {
+  background: #454545 !important;
+  // border-bottom: 2px solid #2f2e2e;
+  // .box-shadow(inset 0 -2px #2f2e2e);
+  .white;
+  &:hover,&:active,&:focus{
+    background: #333333 !important;
+    .white;
+    border-color: #333333 !important;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+
+    .btn{
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1em;
+    }
+}
