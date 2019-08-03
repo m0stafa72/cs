@@ -5,8 +5,10 @@ import {BrowserRouter} from 'react-router-dom';
 import Layouts from './views/layouts/Layouts';
 import * as serviceWorker from './serviceWorker';
 
+// import Request from './models/api.service';
 
 import './assets/css/app.css';
+
 
 
 ReactDOM.render(

@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-class SiteApi {
+class Request {
 
     constructor(){
         this.ApiUrl = 'http://localhost/cs/public/api';
@@ -24,5 +24,5 @@ class SiteApi {
 
 
 }
-export default new SiteApi();
+export default new Request();
 
